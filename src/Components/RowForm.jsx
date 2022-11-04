@@ -1,31 +1,37 @@
 import React from 'react'
-import general from './Formulario.js'
+import RadioButton from 'Components/RadioButton'
 
-const RowForm = () => {
+const RowForm = ({ informacion, estilos }) => {
+
   return (
     <div>
-      <table className="table table-hover" style={{paddingLeft: '50px'}}>
+      <table style={estilos}>
         <thead>
-          <tr>
-              <th>Parámetro</th>
-              <th>Si</th>
-              <th>No</th>
-              <th>Valor</th>
+          <tr style={{borderBottom: "1px solid black"}}>
+              <th style={{width: "55%", paddingBottom: '2vh'}} >Parámetro</th>
+              <th style={{width: "35vh", paddingRight: "10%", paddingBottom: '2vh'}}>Información disponible</th>
+              <th style={{width: "20%", display: "flex", justifyContent: "center"}}>Valor</th>
           </tr>
         </thead>
         <tbody>
             {
-              general.map((el) => {
+              informacion.map((el) => {
                 return (
                   <tr>
-                    <td>{el}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{el[0]}</td>
+                    <td>
+                      <RadioButton />
+                    </td>
+                    <td>{el[1]}</td>
                   </tr>
                 )
               })
             }
+            <tr style = {{borderTop: "1px solid black"}}>
+              <td style={{fontWeight: 'bold', paddingTop: '2vh', paddingBottom: '2vh'}}>
+              Subtotal
+              </td>
+            </tr>
         </tbody>
       </table>
   </div>

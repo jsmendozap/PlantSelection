@@ -1,8 +1,12 @@
 const general = [
-  "Descripción taxonómica",
-  "Descripción geográfica",
-  "Fenología",
-  "Subtotal",
+  ["Descripción taxonómica", 1],
+  ["Descripción geográfica", 1],
+  ["Fenología", 3],
 ];
 
-export default general;
+const plantaciones = [
+  ["Regional/Nacional", 2],
+  ["Departamental/Municipal", 3],
+];
+
+export { general, plantaciones };
