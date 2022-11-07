@@ -1,12 +1,35 @@
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material'
+import { useTotal } from 'Context/TotalContext'
 import React from 'react'
+import { useEffect } from 'react'
 
-const RadioButton = () => {
+const RadioButton = ({ name }) => {
+
+  const { total, setTotal } = useTotal()
+
+  useEffect(() => {
+    console.log(total)
+  }, [total])
+  
+
+  const sub = (seleccion, puntaje) => {
+    const valor = puntaje.split(',')[2]
+    if(seleccion === "si"){
+      const subtotal = parseInt(valor) + parseInt(total)
+      setTotal(subtotal)
+    }else{
+      if(parseInt(total) > 0){
+        const subtotal = parseInt(total) - parseInt(valor)
+        setTotal(subtotal)
+      }
+    }
+  }
+
   return (
     <FormControl>
-        <RadioGroup row>
-            <FormControlLabel value="si" control={<Radio />} label="Si"  />
-            <FormControlLabel value="no" control={<Radio />} label="No"  />
+        <RadioGroup row name={name.toString()} onChange={(e, value) => {sub(value, e.target.name)}}>
+          <FormControlLabel value="si" control={<Radio />} label="Si" />
+          <FormControlLabel value="no" control={<Radio />} label="No" />
         </RadioGroup>
     </FormControl>
   )

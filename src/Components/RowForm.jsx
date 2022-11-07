@@ -17,12 +17,12 @@ const RowForm = ({ informacion, estilos }) => {
             {
               informacion.map((el) => {
                 return (
-                  <tr>
-                    <td>{el[0]}</td>
-                    <td>
-                      <RadioButton />
-                    </td>
+                  <tr key={el[0]}>
                     <td>{el[1]}</td>
+                    <td>
+                      <RadioButton name={el} />
+                    </td>
+                    <td>{el[2]}</td>
                   </tr>
                 )
               })
