@@ -19,7 +19,7 @@ const Card = ({ titulo, informacion }) => {
     borderColor: "gray",
     borderWidth: "2px",
     borderStyle: "solid",
-    width: "50%",
+    width: "120%",
     marginLeft: "15vh",
     marginBottom: "3vh" 
   }

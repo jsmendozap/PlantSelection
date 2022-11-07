@@ -7,7 +7,10 @@ import { TotalContext } from 'Context/TotalContext';
 
 function App() {
 
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(
+    {"Información general": 0, 
+    "Plantaciones forestales": 0}
+  )
 
   return (
     <div className="App">
