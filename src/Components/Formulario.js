@@ -9,4 +9,11 @@ const plantaciones = [
   [2.2, "Departamental/Municipal", 3, "Plantaciones forestales"],
 ];
 
-export { general, plantaciones };
+const germoplasma = [
+  [3.1, "Jardín y/o minijardín clonal", 5, "Oferta de germoplasma disponible"],
+  [3.2, "Huerto semillero", 2, "Oferta de germoplasma disponible"],
+  [3.3, "Rodal semilelro", 2, "Oferta de germoplasma disponible"],
+  [3.4, "Fuente identificada", 1, "Oferta de germoplasma disponible"],
+];
+
+export { general, plantaciones, germoplasma };

@@ -9,7 +9,8 @@ function App() {
 
   const [total, setTotal] = useState(
     {"Información general": 0, 
-    "Plantaciones forestales": 0}
+    "Plantaciones forestales": 0,
+    "Oferta de germoplasma disponible": 0}
   )
 
   return (

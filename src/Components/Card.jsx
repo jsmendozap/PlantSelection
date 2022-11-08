@@ -16,12 +16,11 @@ const Card = ({ titulo, informacion }) => {
 
   const card = {
     borderRadius: "10px",
-    borderColor: "gray",
-    borderWidth: "2px",
-    borderStyle: "solid",
     width: "120%",
     marginLeft: "15vh",
-    marginBottom: "3vh" 
+    marginBottom: "3vh",
+    boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+    transition: '0.3s'
   }
 
   return (
