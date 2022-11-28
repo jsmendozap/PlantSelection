@@ -14,13 +14,13 @@ const Header = () => {
     marginLeft: "5vh"
   }
 
-  const items = {marginRight: '5vh', fontSize: 20, cursor: 'pointer', color: 'gray'}
+  const items = {marginRight: '5vh', fontSize: 16, cursor: 'pointer', color: 'gray'}
 
   return (
     <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
       <div style={estilos}>
         <GiForest style={{width: '10vh', height: '7vh', color: 'darkgreen'}}/>
-        <h3 style={{font: 'VAG Rounded Light'}}>Selección de especies para plantaciones forestales</h3>
+        <h4 style={{font: 'VAG Rounded Light'}}>Selección de especies para plantaciones forestales</h4>
       </div>
       <div>
         <ul style={{listStyle: 'none', display: 'flex'}}>

@@ -10,7 +10,16 @@ function App() {
   const [total, setTotal] = useState(
     {"Información general": 0, 
     "Plantaciones forestales": 0,
-    "Oferta de germoplasma disponible": 0}
+    "Oferta de germoplasma disponible": 0,
+    "Requerimientos ecológicos generales": 0,
+    "Requerimientos ecológicos óptimos": 0,
+    "Propagación": 0,
+    "Silvicultura": 0,
+    "Crecimiento/Rendimientos": 0,
+    "Madera": 0,
+    "Plagas y enfermedades": 0,
+    "Bibliografía": 0
+  }
   )
 
   return (

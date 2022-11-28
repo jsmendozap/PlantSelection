@@ -1,20 +1,20 @@
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material'
 import { useTotal } from 'Context/TotalContext'
 import React from 'react'
-import { useEffect } from 'react'
+//import { useEffect } from 'react'
 
 const RadioButton = ({ name }) => {
 
   const { total, setTotal } = useTotal()
 
-  useEffect(() => {
+  /*useEffect(() => {
     console.log(total)
-  }, [total])
+  }, [total])*/
   
   const actualizar = (seleccion, array, valor) => {
     const subtotal = seleccion === "si" ?
-     parseInt(valor) + parseInt(total[array]) :
-     parseInt(total[array]) - parseInt(valor)
+     parseFloat(valor) + parseFloat(total[array]) :
+     parseFloat(total[array]) - parseFloat(valor)
     subtotal > 0 ?
      setTotal(prev => ({...prev, [array]: subtotal})) :
      setTotal(prev => ({...prev, [array]: 0}))

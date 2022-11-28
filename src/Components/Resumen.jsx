@@ -39,14 +39,25 @@ const Resumen = () => {
                 </thead>
                 <tbody>
                     {Object.entries(total).map((el) => {
+                        console.log(el);
                         return (
                         <tr>
                             <td>{el[0]}</td>
-                            <td>{el[1]}</td>
+                            <td style={{textAlign: "center"}}>
+                                {el[1]}
+                            </td>
                         </tr>
                         )
                     })
                     }
+                    <tr style={{borderTop: "1px solid black"}}>
+                        <td style={{fontWeight: 'bold'}}>Total</td>
+                        <td style={{textAlign: 'center'}}>
+                            {
+                                Object.values(total).reduce((sum, value) => sum + value)
+                            }
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
