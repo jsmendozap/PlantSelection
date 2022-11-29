@@ -2,7 +2,8 @@ import React from 'react'
 import { GiForest } from "react-icons/gi"
 import { MdGrading } from "react-icons/md"
 import { BiSearchAlt } from "react-icons/bi"
-import { BsFillQuestionCircleFill } from "react-icons/bs"
+import { AiFillHome } from "react-icons/ai"
+import { HiDocumentAdd } from "react-icons/hi"
 
 const Header = () => {
 
@@ -10,8 +11,8 @@ const Header = () => {
     height: "12vh",
     display: "flex",
     alignItems: "center",
-    marginBottom: "2vh",
-    marginLeft: "5vh"
+    marginLeft: "5vh",
+    marginBottom: "2vh"
   }
 
   const items = {marginRight: '5vh', fontSize: 16, cursor: 'pointer', color: 'gray'}
@@ -19,22 +20,28 @@ const Header = () => {
   return (
     <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
       <div style={estilos}>
-        <GiForest style={{width: '10vh', height: '7vh', color: 'darkgreen'}}/>
-        <h4 style={{font: 'VAG Rounded Light'}}>Selección de especies para plantaciones forestales</h4>
+        <GiForest style={{width: '10vh', height: '8vh', color: 'darkgreen'}}/>
+        <h2 style={{font: 'VAG Rounded Light', fontSize: 35}}>
+          Selección forestal
+        </h2>
       </div>
       <div>
         <ul style={{listStyle: 'none', display: 'flex'}}>
+          <li style={items}>
+            <AiFillHome style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
+            Inicio
+          </li>
           <li style={items}>
             <MdGrading style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
             Calificar especie
           </li>
           <li style={items}>
-            <BiSearchAlt style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
-            Buscar especie
+            <HiDocumentAdd style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
+            Añadir especie
           </li>
           <li style={items}>
-            <BsFillQuestionCircleFill style={{width: '4vh', height: '2.5vh', color: 'darkblue'}}/>
-            Acerca
+            <BiSearchAlt style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
+            Buscar especie
           </li>
         </ul>
       </div>
