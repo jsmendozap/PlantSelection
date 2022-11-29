@@ -4,6 +4,7 @@ import { MdGrading } from "react-icons/md"
 import { BiSearchAlt } from "react-icons/bi"
 import { AiFillHome } from "react-icons/ai"
 import { HiDocumentAdd } from "react-icons/hi"
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 
@@ -15,7 +16,7 @@ const Header = () => {
     marginBottom: "2vh"
   }
 
-  const items = {marginRight: '5vh', fontSize: 16, cursor: 'pointer', color: 'gray'}
+  const items = {marginRight: '5vh', fontSize: 16, cursor: 'pointer'}
 
   return (
     <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
@@ -28,20 +29,28 @@ const Header = () => {
       <div>
         <ul style={{listStyle: 'none', display: 'flex'}}>
           <li style={items}>
-            <AiFillHome style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
-            Inicio
+            <Link to="/" style={{color: 'gray', textDecoration: 'none'}}>
+              <AiFillHome style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
+              Inicio
+            </Link>
           </li>
           <li style={items}>
-            <MdGrading style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
-            Calificar especie
+            <Link to="/calificar" style={{color: 'gray', textDecoration: 'none'}}>
+              <MdGrading style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
+              Calificar especie
+            </Link> 
           </li>
           <li style={items}>
-            <HiDocumentAdd style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
-            Añadir especie
+            <Link to="/agregar" style={{color: 'gray', textDecoration: 'none'}}>
+              <HiDocumentAdd style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
+              Añadir especie
+            </Link>
           </li>
           <li style={items}>
-            <BiSearchAlt style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
-            Buscar especie
+            <Link to="/buscar" style={{color: 'gray', textDecoration: 'none'}}>
+              <BiSearchAlt style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
+              Buscar especie
+            </Link>
           </li>
         </ul>
       </div>
