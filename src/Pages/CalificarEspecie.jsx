@@ -14,6 +14,29 @@ import { plagas } from 'Components/Formulario'
 import { bibliografia } from 'Components/Formulario'
 
 const CalificarEspecie = () => {
+
+  const estilos = {
+    intro: {
+      height: "5vh",
+      backgroundColor: "#2c3e50",
+      borderTopLeftRadius: "10px",
+      borderTopRightRadius: "10px",
+      color: "white",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: 23
+    },
+    card: {
+    borderRadius: "10px",
+    width: "100%",
+    marginLeft: "15vh",
+    marginBottom: "3vh",
+    boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+    transition: '0.3s'
+    }
+  }
+
   return (
     <div>
       <div style={{display: 'flex', justifyContent: 'center', marginBottom: '3vh'}}>
@@ -22,17 +45,17 @@ const CalificarEspecie = () => {
       </div>
       <div style={{display: 'flex'}}>
         <div>
-          <Card titulo="Información general" informacion={general} />
-          <Card titulo="Plantaciones forestales" informacion={plantaciones} />
-          <Card titulo="Oferta de germoplasma disponible" informacion={germoplasma} />
-          <Card titulo="Requerimientos ecológicos generales" informacion={generales} />
-          <Card titulo="Requerimientos ecológicos óptimos" informacion={especificos}/>
-          <Card titulo="Propagación" informacion={propagacion} />
-          <Card titulo="Silvicultura" informacion={silvicultra} />
-          <Card titulo="Crecimiento - Rendimientos" informacion={crecimiento} />
-          <Card titulo="Madera" informacion={madera} />
-          <Card titulo="Plagas y enfermedades" informacion={plagas} />
-          <Card titulo="Bibliografía" informacion={bibliografia} />
+          <Card titulo="Información general" informacion={general} estilos={estilos}/>
+          <Card titulo="Plantaciones forestales" informacion={plantaciones} estilos={estilos}/>
+          <Card titulo="Oferta de germoplasma disponible" informacion={germoplasma} estilos={estilos}/>
+          <Card titulo="Requerimientos ecológicos generales" informacion={generales} estilos={estilos}/>
+          <Card titulo="Requerimientos ecológicos óptimos" informacion={especificos} estilos={estilos}/>
+          <Card titulo="Propagación" informacion={propagacion} estilos={estilos}/>
+          <Card titulo="Silvicultura" informacion={silvicultra} estilos={estilos}/>
+          <Card titulo="Crecimiento - Rendimientos" informacion={crecimiento} estilos={estilos}/>
+          <Card titulo="Madera" informacion={madera} estilos={estilos}/>
+          <Card titulo="Plagas y enfermedades" informacion={plagas} estilos={estilos}/>
+          <Card titulo="Bibliografía" informacion={bibliografia} estilos={estilos}/>
         </div>
         <Resumen />
       </div>

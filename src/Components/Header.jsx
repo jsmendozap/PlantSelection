@@ -9,19 +9,18 @@ import { Link } from 'react-router-dom'
 const Header = () => {
 
   const estilos = {
-    height: "12vh",
+    height: "80px",
     display: "flex",
     alignItems: "center",
-    marginLeft: "5vh",
-    marginBottom: "2vh"
+    marginLeft: "5vh"
   }
 
-  const items = {marginRight: '5vh', fontSize: 16, cursor: 'pointer'}
+  const items = {marginRight: '5vh', fontSize: 17, cursor: 'pointer'}
 
   return (
-    <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
+    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#F9F7F8', marginBottom: '4vh', borderBottom: '1px solid #D1D7D8'}}>
       <div style={estilos}>
-        <GiForest style={{width: '10vh', height: '8vh', color: 'darkgreen'}}/>
+        <GiForest style={{width: '10vh', height: '50px', color: 'darkgreen'}}/>
         <h2 style={{font: 'VAG Rounded Light', fontSize: 35}}>
           Selección forestal
         </h2>

@@ -1,6 +1,6 @@
 const general = [
   [1.1, "Descripción taxonómica", 1, "Información general"],
-  [1.2, "Descripción geográfica", 1, "Información general"],
+  [1.2, "Distribución geográfica", 1, "Información general"],
   [1.3, "Fenología", 3, "Información general"],
 ];
 
@@ -12,7 +12,7 @@ const plantaciones = [
 const germoplasma = [
   [3.1, "Jardín y/o minijardín clonal", 5, "Oferta de germoplasma disponible"],
   [3.2, "Huerto semillero", 2, "Oferta de germoplasma disponible"],
-  [3.3, "Rodal semilelro", 2, "Oferta de germoplasma disponible"],
+  [3.3, "Rodal semillero", 2, "Oferta de germoplasma disponible"],
   [3.4, "Fuente identificada", 1, "Oferta de germoplasma disponible"],
 ];
 
@@ -54,8 +54,7 @@ const silvicultra = [
   [7.7, "Densidad de la entresaca", 4, "Silvicultura"],
   [7.8, "Relación DAP/Ht", 3, "Silvicultura"],
   [7.9, "Edad del turno", 2, "Silvicultura"],
-  [7.101, "Volumen del turno", 2, "Silvicultura"],
-  [7.11, "Relación DAP/Ht", 1, "Silvicultura"],
+  [7.101, "Volumen del turno", 2, "Silvicultura"]
 ];
 
 const crecimiento = [
