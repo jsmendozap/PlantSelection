@@ -14,7 +14,7 @@ const Acordion = ({ titulo, contenido }) => {
             <Typography style={{fontWeight: 'bold', fontSize: 18}}>{titulo}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <Typography style={{paddingLeft: '5vh'}}>
                 <Grupo grupo={contenido} />
             </Typography>
           </AccordionDetails>

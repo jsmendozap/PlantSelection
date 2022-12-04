@@ -1,4 +1,3 @@
-//import Card from 'Components/Card'
 import React, { useRef } from 'react'
 import { HiDocumentAdd } from "react-icons/hi"
 import { general } from 'Components/Campos'
@@ -13,6 +12,7 @@ import { crecimiento } from 'Components/Campos'
 import { madera } from 'Components/Campos'
 import { plagas } from 'Components/Campos'
 import { bibliografia } from 'Components/Campos'
+import { ToastContainer, toast } from 'react-toastify';
 
 const AgregarEspecie = () => {
 
@@ -34,10 +34,11 @@ const AgregarEspecie = () => {
     const formData = new FormData(form.current)
     const formProps = Object.fromEntries(formData)
     console.log(formProps)
+    toast.success('Especie guardada exitosamente')
   }
 
   return (
-    <div>
+    <div style={{width: '99%'}}>
       <div style={{display: 'flex', justifyContent: 'center', marginBottom: '3vh'}}>
         <HiDocumentAdd style={{width: '8vh', height: '6vh', color: 'orange'}}/>
         <h2>Agregar especie</h2>
@@ -60,6 +61,7 @@ const AgregarEspecie = () => {
           Guardar
         </button>
       </form>
+      <ToastContainer />
     </div>
   )
 }

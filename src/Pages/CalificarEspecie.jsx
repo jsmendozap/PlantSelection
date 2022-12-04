@@ -17,7 +17,7 @@ const CalificarEspecie = () => {
 
   const estilos = {
     intro: {
-      height: "5vh",
+      height: "6vh",
       backgroundColor: "#2c3e50",
       borderTopLeftRadius: "10px",
       borderTopRightRadius: "10px",
