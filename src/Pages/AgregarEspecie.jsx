@@ -13,20 +13,12 @@ import { madera } from 'Components/Campos'
 import { plagas } from 'Components/Campos'
 import { bibliografia } from 'Components/Campos'
 import { ToastContainer, toast } from 'react-toastify';
+import { Button } from '@mui/material'
+import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 
 const AgregarEspecie = () => {
 
   const form = useRef()
-
-  const boton = {
-    width: '120px',
-    border: '1px solid gray',
-    borderRadius: '1vh',
-    backgroundColor: '#41297E',
-    color: 'white',
-    height: '40px',
-    marginBottom: '3vh'
-  }
 
   const agregar = (e) => {
     
@@ -40,7 +32,7 @@ const AgregarEspecie = () => {
   return (
     <div style={{width: '99%'}}>
       <div style={{display: 'flex', justifyContent: 'center', marginBottom: '3vh'}}>
-        <HiDocumentAdd style={{width: '8vh', height: '6vh', color: 'orange'}}/>
+        <HiDocumentAdd style={{width: '8vh', height: '45px', color: 'orange'}}/>
         <h2>Agregar especie</h2>
       </div>
       <form ref={form} onSubmit={agregar} style={{textAlign: 'center'}}>
@@ -57,9 +49,9 @@ const AgregarEspecie = () => {
           <Acordion titulo='Plagas y enfermedades' contenido={plagas}/>
           <Acordion titulo='Bibliografia' contenido={bibliografia}/>
         </div>
-        <button type='submit' style={boton}>
+        <Button type='submit' variant='contained' startIcon={<SaveOutlinedIcon />}>
           Guardar
-        </button>
+        </Button>
       </form>
       <ToastContainer />
     </div>

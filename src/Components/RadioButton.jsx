@@ -7,10 +7,6 @@ const RadioButton = ({ name }) => {
 
   const { total, setTotal } = useTotal()
 
-  /*useEffect(() => {
-    console.log(total)
-  }, [total])*/
-  
   const actualizar = (seleccion, array, valor) => {
     const subtotal = seleccion === "si" ?
      parseFloat(valor) + parseFloat(total[array]) :

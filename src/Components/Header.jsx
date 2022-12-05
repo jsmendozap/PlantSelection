@@ -5,6 +5,7 @@ import { BiSearchAlt } from "react-icons/bi"
 import { AiFillHome } from "react-icons/ai"
 import { HiDocumentAdd } from "react-icons/hi"
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const Header = () => {
 
@@ -15,7 +16,11 @@ const Header = () => {
     marginLeft: "5vh"
   }
 
-  //#F9F7F8
+  const [inicio, setInicio] = useState('gray')
+  const [calificar, setCalificar] = useState('gray')
+  const [agregar, setAgregar] = useState('gray')
+  const [buscar, setBuscar] = useState('gray')
+
   const items = {marginRight: '5vh', fontSize: 17, cursor: 'pointer'}
 
   return (
@@ -29,25 +34,25 @@ const Header = () => {
       <div>
         <ul style={{listStyle: 'none', display: 'flex'}}>
           <li style={items}>
-            <Link to="/" style={{color: 'gray', textDecoration: 'none'}}>
+            <Link to="/" style={{color: `${inicio}`, textDecoration: 'none'}} onMouseEnter={() => setInicio('#533E8A')} onMouseLeave={() => setInicio('gray')}>
               <AiFillHome style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
               Inicio
             </Link>
           </li>
           <li style={items}>
-            <Link to="/calificar" style={{color: 'gray', textDecoration: 'none'}}>
+            <Link to="/calificar" style={{color: `${calificar}`, textDecoration: 'none'}} onMouseEnter={() => setCalificar('#533E8A')} onMouseLeave={() => setCalificar('gray')}>
               <MdGrading style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
               Calificar especie
             </Link> 
           </li>
           <li style={items}>
-            <Link to="/agregar" style={{color: 'gray', textDecoration: 'none'}}>
+            <Link to="/agregar" style={{color: `${agregar}`, textDecoration: 'none'}} onMouseEnter={() => setAgregar('#533E8A')} onMouseLeave={() => setAgregar('gray')}>
               <HiDocumentAdd style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
               Añadir especie
             </Link>
           </li>
           <li style={items}>
-            <Link to="/buscar" style={{color: 'gray', textDecoration: 'none'}}>
+            <Link to="/buscar" style={{color: `${buscar}`, textDecoration: 'none'}} onMouseEnter={() => setBuscar('#533E8A')} onMouseLeave={() => setBuscar('gray')}>
               <BiSearchAlt style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
               Buscar especie
             </Link>

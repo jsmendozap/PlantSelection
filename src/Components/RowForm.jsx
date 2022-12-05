@@ -4,7 +4,7 @@ import RadioButton from 'Components/RadioButton'
 const RowForm = ({ informacion, estilos }) => {
 
   return (
-    <div>
+    <div style={{paddingBottom: '2vh'}}>
       <table style={estilos}>
         <thead>
           <tr style={{borderBottom: "1px solid black"}}>
@@ -27,11 +27,6 @@ const RowForm = ({ informacion, estilos }) => {
                 )
               })
             }
-            <tr style = {{borderTop: "1px solid black"}}>
-              <td style={{fontWeight: 'bold', paddingTop: '2vh', paddingBottom: '2vh'}}>
-              Subtotal
-              </td>
-            </tr>
         </tbody>
       </table>
   </div>

@@ -40,7 +40,7 @@ const CalificarEspecie = () => {
   return (
     <div>
       <div style={{display: 'flex', justifyContent: 'center', marginBottom: '3vh'}}>
-        <MdGrading style={{width: '8vh', height: '6vh', color: 'orange'}}/>
+        <MdGrading style={{width: '8vh', height: '45px', color: 'orange'}}/>
         <h1 style={{font: 'VAG Rounded Light', fontSize: 36}}>Calificar especie</h1>
       </div>
       <div style={{display: 'flex'}}>

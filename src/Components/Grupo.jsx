@@ -7,7 +7,7 @@ const Grupo = ({ grupo }) => {
     <div style={{display: 'grid', gridTemplateColumns: '70vh 70vh', justifyContent: 'space-evenly'}} >
         {
             grupo.map((el) => {
-                return <Input etiqueta={el[2]} nombre={el[1]} tipo={el[3]}/>
+                return <Input key={el[0]} etiqueta={el[2]} nombre={el[1]} tipo={el[3]}/>
             })
         }
     </div>

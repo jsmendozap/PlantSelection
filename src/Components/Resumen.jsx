@@ -6,7 +6,7 @@ const Resumen = () => {
     const { total } = useTotal()
 
     const intro = {
-        height: "5vh",
+        height: "6vh",
         backgroundColor: "#707272",
         borderTopLeftRadius: "10px",
         borderTopRightRadius: "10px",
@@ -39,9 +39,8 @@ const Resumen = () => {
                 </thead>
                 <tbody>
                     {Object.entries(total).map((el) => {
-                        console.log(el);
                         return (
-                        <tr>
+                        <tr key={el[0]}>
                             <td>{el[0]}</td>
                             <td style={{textAlign: "center"}}>
                                 {el[1]}
