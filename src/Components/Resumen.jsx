@@ -6,7 +6,7 @@ const Resumen = () => {
     const { total } = useTotal()
 
     const intro = {
-        height: "6vh",
+        height: "50px",
         backgroundColor: "#707272",
         borderTopLeftRadius: "10px",
         borderTopRightRadius: "10px",

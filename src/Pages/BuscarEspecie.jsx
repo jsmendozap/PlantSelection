@@ -10,7 +10,7 @@ const BuscarEspecie = () => {
   return (
     <div>
       <div style={{display: 'flex', justifyContent: 'center', marginBottom: '3vh'}}>
-        <BiSearchAlt style={{width: '8vh', height: '45px', color: 'orange'}}/>
+        <BiSearchAlt style={{width: '5vh', height: '45px', color: 'orange'}}/>
         <h2>Buscar especie</h2>
       </div>
       <div style={{display: 'flex', justifyContent: 'center'}}>

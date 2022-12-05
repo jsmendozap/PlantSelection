@@ -17,7 +17,7 @@ const CalificarEspecie = () => {
 
   const estilos = {
     intro: {
-      height: "6vh",
+      height: "50px",
       backgroundColor: "#2c3e50",
       borderTopLeftRadius: "10px",
       borderTopRightRadius: "10px",
@@ -40,8 +40,8 @@ const CalificarEspecie = () => {
   return (
     <div>
       <div style={{display: 'flex', justifyContent: 'center', marginBottom: '3vh'}}>
-        <MdGrading style={{width: '8vh', height: '45px', color: 'orange'}}/>
-        <h1 style={{font: 'VAG Rounded Light', fontSize: 36}}>Calificar especie</h1>
+        <MdGrading style={{width: '5vh', height: '45px', color: 'orange'}}/>
+        <h1 style={{fontFamily: 'Roboto', fontWeight: 'bolder', fontSize: 36}}>Calificar especie</h1>
       </div>
       <div style={{display: 'flex'}}>
         <div>

@@ -32,7 +32,7 @@ const AgregarEspecie = () => {
   return (
     <div style={{width: '99%'}}>
       <div style={{display: 'flex', justifyContent: 'center', marginBottom: '3vh'}}>
-        <HiDocumentAdd style={{width: '8vh', height: '45px', color: 'orange'}}/>
+        <HiDocumentAdd style={{width: '5vh', height: '45px', color: 'orange'}}/>
         <h2>Agregar especie</h2>
       </div>
       <form ref={form} onSubmit={agregar} style={{textAlign: 'center'}}>
