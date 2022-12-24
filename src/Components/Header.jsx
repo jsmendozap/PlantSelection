@@ -4,8 +4,7 @@ import { MdGrading } from "react-icons/md"
 import { BiSearchAlt } from "react-icons/bi"
 import { AiFillHome } from "react-icons/ai"
 import { HiDocumentAdd } from "react-icons/hi"
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { Items } from 'Components/Items'
 
 const Header = () => {
 
@@ -16,12 +15,14 @@ const Header = () => {
     marginLeft: "5vh"
   }
 
-  const [inicio, setInicio] = useState('gray')
-  const [calificar, setCalificar] = useState('gray')
-  const [agregar, setAgregar] = useState('gray')
-  const [buscar, setBuscar] = useState('gray')
+  const iconos = {width: '5vh', height: '3vh', color: 'darkblue'}
 
-  const items = {marginRight: '5vh', fontSize: 15, cursor: 'pointer'}
+  const items = [
+    {id: 1, nombre: "Inicio", ruta: '/', icono: (<AiFillHome style={iconos}/>)},
+    {id: 2, nombre: "Calificar especie", ruta: '/calificar', icono: (<MdGrading style={iconos}/>)},
+    {id: 3, nombre: "Añadir especie", ruta: '/agregar', icono: (<HiDocumentAdd  style={iconos}/>)},
+    {id: 4, nombre: "Buscar especie", ruta: '/buscar', icono: (<BiSearchAlt  style={iconos}/>)},
+  ]
 
   return (
     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4vh', borderBottom: '2px solid #D1D7D8'}}>
@@ -33,30 +34,15 @@ const Header = () => {
       </div>
       <div>
         <ul style={{listStyle: 'none', display: 'flex', margin: '0'}}>
-          <li style={items}>
-            <Link to="/" style={{color: `${inicio}`, textDecoration: 'none'}} onMouseEnter={() => setInicio('#533E8A')} onMouseLeave={() => setInicio('gray')}>
-              <AiFillHome style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
-              Inicio
-            </Link>
-          </li>
-          <li style={items}>
-            <Link to="/calificar" style={{color: `${calificar}`, textDecoration: 'none'}} onMouseEnter={() => setCalificar('#533E8A')} onMouseLeave={() => setCalificar('gray')}>
-              <MdGrading style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
-              Calificar especie
-            </Link> 
-          </li>
-          <li style={items}>
-            <Link to="/agregar" style={{color: `${agregar}`, textDecoration: 'none'}} onMouseEnter={() => setAgregar('#533E8A')} onMouseLeave={() => setAgregar('gray')}>
-              <HiDocumentAdd style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
-              Añadir especie
-            </Link>
-          </li>
-          <li style={items}>
-            <Link to="/buscar" style={{color: `${buscar}`, textDecoration: 'none'}} onMouseEnter={() => setBuscar('#533E8A')} onMouseLeave={() => setBuscar('gray')}>
-              <BiSearchAlt style={{width: '5vh', height: '3vh', color: 'darkblue'}}/>
-              Buscar especie
-            </Link>
-          </li>
+          {
+            items.map((item) => {
+              return(
+                <Items key={item.id} ruta={item.ruta} nombre={item.nombre}>
+                  {item.icono}
+                </Items>
+              )
+            })
+          }
         </ul>
       </div>
     </div>

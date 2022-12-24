@@ -10,17 +10,17 @@ import BuscarEspecie from "Pages/BuscarEspecie";
 const Router = () => {
 
     const [total, setTotal] = useState(
-        {"Información general": 0, 
-        "Plantaciones forestales": 0,
-        "Oferta de germoplasma disponible": 0,
-        "Requerimientos ecológicos generales": 0,
-        "Requerimientos ecológicos óptimos": 0,
-        "Propagación": 0,
-        "Silvicultura": 0,
-        "Crecimiento/Rendimientos": 0,
-        "Madera": 0,
-        "Plagas y enfermedades": 0,
-        "Bibliografía": 0
+        {"Información general": 5, 
+        "Plantaciones forestales": 5,
+        "Oferta de germoplasma disponible": 10,
+        "Requerimientos ecológicos generales": 4,
+        "Requerimientos ecológicos óptimos": 8,
+        "Propagación": 5,
+        "Silvicultura": 24,
+        "Crecimiento/Rendimientos": 20,
+        "Madera": 10,
+        "Plagas y enfermedades": 5,
+        "Bibliografía": 4
       }
       )
 

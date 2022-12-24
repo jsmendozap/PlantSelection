@@ -18,8 +18,18 @@ const germoplasma = [
 
 const generales = [
   [4.1, "Precipitación promedio", 0.25, "Requerimientos ecológicos generales"],
-  [4.2, "Distribución de la precipitación", 0.25, "Requerimientos ecológicos generales"],
-  [4.3, "Distribución altitudinal", 0.25, "Requerimientos ecológicos generales"],
+  [
+    4.2,
+    "Distribución de la precipitación",
+    0.25,
+    "Requerimientos ecológicos generales",
+  ],
+  [
+    4.3,
+    "Distribución altitudinal",
+    0.25,
+    "Requerimientos ecológicos generales",
+  ],
   [4.4, "Temperatura", 0.25, "Requerimientos ecológicos generales"],
   [4.5, "pH del suelo", 0.25, "Requerimientos ecológicos generales"],
   [4.6, "Profundidad del suelo", 0.25, "Requerimientos ecológicos generales"],
@@ -29,7 +39,12 @@ const generales = [
 
 const especificos = [
   [5.1, "Precipitación promedio", 1, "Requerimientos ecológicos óptimos"],
-  [5.2, "Distribución de la precipitación", 1, "Requerimientos ecológicos óptimos"],
+  [
+    5.2,
+    "Distribución de la precipitación",
+    1,
+    "Requerimientos ecológicos óptimos",
+  ],
   [5.3, "Distribución altitudinal", 1, "Requerimientos ecológicos óptimos"],
   [5.4, "Temperatura", 1, "Requerimientos ecológicos óptimos"],
   [5.5, "pH del suelo", 1, "Requerimientos ecológicos óptimos"],
@@ -54,7 +69,7 @@ const silvicultra = [
   [7.7, "Densidad de la entresaca", 4, "Silvicultura"],
   [7.8, "Relación DAP/Ht", 3, "Silvicultura"],
   [7.9, "Edad del turno", 2, "Silvicultura"],
-  [7.101, "Volumen del turno", 2, "Silvicultura"]
+  [7.101, "Volumen del turno", 2, "Silvicultura"],
 ];
 
 const crecimiento = [
@@ -72,7 +87,7 @@ const madera = [
 
 const plagas = [[10.1, "Plagas y enfermedades", 5, "Plagas y enfermedades"]];
 
-const bibliografia = [[11.1, "Bibliografia", 5, "Bibliografía"]];
+const bibliografia = [[11.1, "Bibliografia", 4, "Bibliografía"]];
 
 export {
   general,

@@ -8,17 +8,16 @@ const RadioButton = ({ name }) => {
   const { total, setTotal } = useTotal()
 
   const actualizar = (seleccion, array, valor) => {
-    const subtotal = seleccion === "si" ?
-     parseFloat(valor) + parseFloat(total[array]) :
-     parseFloat(total[array]) - parseFloat(valor)
-    subtotal > 0 ?
-     setTotal(prev => ({...prev, [array]: subtotal})) :
-     setTotal(prev => ({...prev, [array]: 0}))
+    if(seleccion === 'no'){
+      const subtotal = parseFloat(total[array]) - parseFloat(valor)
+      setTotal(prev => ({...prev, [array]: subtotal}))
+    }
   }
 
   const sub = (seleccion, puntaje) => {
     const valor = puntaje.split(',')[2]
     actualizar(seleccion, name[3], valor)
+    console.log(seleccion, name[3], valor)
   }
 
   return (
