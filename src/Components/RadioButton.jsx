@@ -17,7 +17,6 @@ const RadioButton = ({ name }) => {
   const sub = (seleccion, puntaje) => {
     const valor = puntaje.split(',')[2]
     actualizar(seleccion, name[3], valor)
-    console.log(seleccion, name[3], valor)
   }
 
   return (
