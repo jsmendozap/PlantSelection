@@ -15,17 +15,24 @@ import { bibliografia } from 'Components/Campos'
 import { ToastContainer, toast } from 'react-toastify';
 import { Button } from '@mui/material'
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
+import calificacion from 'Components/calificacion.json'
+import sortKeys from 'sort-keys'
 
 const AgregarEspecie = () => {
 
   const form = useRef()
 
+  const calificar = (form, valores) => {
+    const evaluacion = Object.values(form).map((el) => el !== "");
+    const resultado = Object.values(valores).map((el, index) => (evaluacion[index] ? el : 0));
+    return resultado.reduce((partialSum, valor) => partialSum + valor, 0);
+  }
+
   const agregar = (e) => {
-    
     e.preventDefault()
     const formData = new FormData(form.current)
-    const formProps = Object.fromEntries(formData)
-    console.log(formProps)
+    const formProps = sortKeys(Object.fromEntries(formData))
+    console.log({...formProps, 'calificacion': calificar(formProps, calificacion)})
     toast.success('Especie guardada exitosamente')
   }
 
