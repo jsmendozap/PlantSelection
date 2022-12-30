@@ -2,7 +2,7 @@ const especies = [
   {
     id: 1,
     cientifico: "Tabebuia rosea",
-    comun: "Ocobo",
+    comun: "Ocobo, Roble",
     calificacion: 60,
     resumen: {
       id: 1,

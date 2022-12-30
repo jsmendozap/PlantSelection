@@ -1,11 +1,86 @@
-import { Table, TableCell, TableContainer, TableHead, TableRow, TableBody } from '@mui/material'
 import React from 'react'
+import especies from 'Pages/especies';
 import { BiSearchAlt } from "react-icons/bi"
-import Paper from '@mui/material/Paper';
-import especies from 'Pages/especies'
-import Fila from 'Components/Fila';
+import MUIDataTable from "mui-datatables";
+import AspectRatioIcon from '@mui/icons-material/AspectRatio';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Link } from 'react-router-dom'
 
 const BuscarEspecie = () => {
+
+  const columns = [
+    {
+     name: "cientifico",
+     label: "Nombre Cientifico",
+     options: {
+      filter: true,
+      sort: true,
+      setCellProps: () => ({ style: { fontStyle: 'italic' }})
+     }
+    },
+    {
+     name: "comun",
+     label: "Nombre Vulgar",
+     options: {
+      filter: true,
+      sort: true
+     }
+    },
+    {
+     name: "calificacion",
+     label: "Calificación",
+     options: {
+      filter: true,
+      sort: true
+     }
+    },
+    {
+      name: 'detalles',
+      label: "DETALLES",
+      options: {
+        filter: false,
+        sort: false,
+        customBodyRenderLite: (rowIndex) => {
+          return(
+            <Link to={especies[rowIndex].id.toString()}>
+              <AspectRatioIcon style={{cursor: 'pointer'}}/>
+            </Link>
+          )
+        },
+        setCellProps: () => ({ style: { paddingRight: '55px' }}) 
+      }
+    }
+   ];
+   
+  const options = {
+    filterType: 'dropdown',
+    elevation: 3,
+    print: false,
+    selectableRows: 'none',
+    viewColumns: false,
+    textLabels: {
+      body: {
+        noMatch: "No se encontraron coincidencias",
+        columnHeaderTooltip: column => `Ordenar por ${column.label}`
+      },
+      pagination: {
+        next: "Página siguiente",
+        previous: "Página anterior",
+        rowsPerPage: "Registros por página:",
+        displayRows: "of",
+      },
+      toolbar: {
+        search: "Buscar",
+        downloadCsv: "Descargar CSV",
+        filterTable: "Filtrar tabla",
+      },
+      filter: {
+        all: "Todos",
+        title: "Filtros",
+        reset: "Resetear",
+      }
+    }
+  };
 
   return (
     <div>
@@ -14,31 +89,58 @@ const BuscarEspecie = () => {
         <h2>Buscar especie</h2>
       </div>
       <div style={{display: 'flex', justifyContent: 'center'}}>
-        <TableContainer component={Paper} style={{width: '70%'}}>
-          <Table aria-label="collapsible table">
-            <TableHead>
-              <TableRow>
-                <TableCell />
-                <TableCell style={{fontSize: 18}}>Nombre científico</TableCell>
-                <TableCell style={{fontSize: 18}}>Nombre común</TableCell>
-                <TableCell style={{fontSize: 18}}>Calificación</TableCell>
-                <TableCell style={{fontSize: 18}}>Más información</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-            {
-                especies.map((especie) => {
-                    return(
-                        <Fila key={especie.id}  especie={especie} />
-                    )
-                })
-            }
-            </TableBody>
-          </Table>
-        </TableContainer>
+        <ThemeProvider theme={myTheme}>
+          <MUIDataTable 
+            title={"Especies registradas"}
+            data={especies}
+            columns={columns}
+            options={options}
+          />
+        </ThemeProvider>  
       </div>
     </div>
   )
 }
 
 export default BuscarEspecie
+
+const myTheme = createTheme({
+  components: {
+    MUIDataTable: {
+      styleOverrides:{
+        root: {
+            padding: '1vh'
+        }
+      }
+    },
+    MUIDataTableBodyCell: {
+      styleOverrides:{
+        root: {
+            textAlign: 'center'
+        }
+      }
+    },
+    MUIDataTableHeadCell: {
+      styleOverrides:{
+        contentWrapper: {
+            display: 'flex',
+            justifyContent: 'center'
+        }
+      }
+    },
+    MuiPaper: {
+      styleOverrides:{
+        root: {
+          width: '75%'
+        }
+      }
+    },
+    MuiPopover: {
+      styleOverrides:{
+        paper: {
+            width: '30%'
+        }
+      }
+    }
+  }
+});

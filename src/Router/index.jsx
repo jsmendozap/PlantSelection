@@ -6,6 +6,7 @@ import CalificarEspecie from "Pages/CalificarEspecie";
 import Header from "Components/Header";
 import AgregarEspecie from "Pages/AgregarEspecie";
 import BuscarEspecie from "Pages/BuscarEspecie";
+import Detalles from "Pages/Detalles";
 
 const Router = () => {
 
@@ -33,6 +34,7 @@ const Router = () => {
                     <Route path="/calificar" element={<CalificarEspecie />}/>
                     <Route path="/agregar" element={<AgregarEspecie />}/>
                     <Route path="/buscar" element={<BuscarEspecie />}/>
+                    <Route path="/buscar/:id" element={<Detalles />}/>
                 </Routes>
             </TotalContext.Provider>
         </BrowserRouter>
