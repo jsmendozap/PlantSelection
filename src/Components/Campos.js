@@ -90,7 +90,9 @@ const madera = [
 
 const plagas = [[10.1, "plagas", "Plagas y enfermedades", "compuesto"]];
 
-const bibliografia = [[11.1, "bibliografia", "Bibliografia", "compuesto"]];
+const bibliografia = [
+  [11.1, "bibliografia", "Fuentes bibliográficas", "compuesto"],
+];
 
 export {
   general,

@@ -19,7 +19,7 @@ const BuscarEspecie = () => {
      }
     },
     {
-     name: "comun",
+     name: "vulgar",
      label: "Nombre Vulgar",
      options: {
       filter: true,
