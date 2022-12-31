@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { TotalContext } from 'Context/TotalContext';
 import Index from "Pages/Index";
 import CalificarEspecie from "Pages/CalificarEspecie";
-import Header from "Components/Header";
 import AgregarEspecie from "Pages/AgregarEspecie";
 import BuscarEspecie from "Pages/BuscarEspecie";
 import Detalles from "Pages/Detalles";
+import Publico from "Layout/Publico";
 
 const Router = () => {
 
@@ -27,16 +27,17 @@ const Router = () => {
 
     return(
         <BrowserRouter>
-            <Header />
-            <TotalContext.Provider value={{ total, setTotal }}>
-                <Routes>
-                    <Route path="/" element={<Index />}/>
-                    <Route path="/calificar" element={<CalificarEspecie />}/>
-                    <Route path="/agregar" element={<AgregarEspecie />}/>
-                    <Route path="/buscar" element={<BuscarEspecie />}/>
-                    <Route path="/buscar/:id" element={<Detalles />}/>
-                </Routes>
-            </TotalContext.Provider>
+            <Publico>
+                <TotalContext.Provider value={{ total, setTotal }}>
+                    <Routes>
+                        <Route path="/" element={<Index />}/>
+                        <Route path="/calificar" element={<CalificarEspecie />}/>
+                        <Route path="/agregar" element={<AgregarEspecie />}/>
+                        <Route path="/buscar" element={<BuscarEspecie />}/>
+                        <Route path="/buscar/:id" element={<Detalles />}/>
+                    </Routes>
+                </TotalContext.Provider>
+            </Publico>
         </BrowserRouter>
     )
 }
