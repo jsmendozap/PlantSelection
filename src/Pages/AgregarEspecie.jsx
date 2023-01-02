@@ -34,6 +34,7 @@ const AgregarEspecie = () => {
     const formData = new FormData(form.current)
     const formProps = sortKeys(Object.fromEntries(formData))
     crearEspecie({...formProps, 'calificacion': calificar(formProps, calificacion)})
+    form.current.reset()
   }
 
   return (
