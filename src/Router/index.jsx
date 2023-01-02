@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TotalContext } from 'Context/TotalContext';
+import { especiesContext } from "Context/EspeciesContext";
 import Index from "Pages/Index";
 import CalificarEspecie from "Pages/CalificarEspecie";
 import AgregarEspecie from "Pages/AgregarEspecie";
 import BuscarEspecie from "Pages/BuscarEspecie";
 import Detalles from "Pages/Detalles";
 import Publico from "Layout/Publico";
+import { obtenerEspecies } from "utils/api";
 
 const Router = () => {
 
@@ -25,9 +27,16 @@ const Router = () => {
       }
       )
 
+    const [especies, setEspecies] = useState([])
+    
+    useEffect(() => {
+        obtenerEspecies(setEspecies);
+    }, [setEspecies])
+
     return(
         <BrowserRouter>
             <Publico>
+                <especiesContext.Provider value={{especies, setEspecies}} >
                 <TotalContext.Provider value={{ total, setTotal }}>
                     <Routes>
                         <Route path="/" element={<Index />}/>
@@ -37,6 +46,7 @@ const Router = () => {
                         <Route path="/buscar/:id" element={<Detalles />}/>
                     </Routes>
                 </TotalContext.Provider>
+                </especiesContext.Provider>
             </Publico>
         </BrowserRouter>
     )

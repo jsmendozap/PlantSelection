@@ -12,11 +12,12 @@ import { crecimiento } from 'Components/Campos'
 import { madera } from 'Components/Campos'
 import { plagas } from 'Components/Campos'
 import { bibliografia } from 'Components/Campos'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import { Button } from '@mui/material'
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import calificacion from 'Components/calificacion.json'
 import sortKeys from 'sort-keys'
+import { crearEspecie } from 'utils/api'
 
 const AgregarEspecie = () => {
 
@@ -32,8 +33,7 @@ const AgregarEspecie = () => {
     e.preventDefault()
     const formData = new FormData(form.current)
     const formProps = sortKeys(Object.fromEntries(formData))
-    console.log({...formProps, 'calificacion': calificar(formProps, calificacion)})
-    toast.success('Especie guardada exitosamente')
+    crearEspecie({...formProps, 'calificacion': calificar(formProps, calificacion)})
   }
 
   return (

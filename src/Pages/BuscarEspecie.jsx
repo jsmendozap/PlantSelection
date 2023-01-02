@@ -1,12 +1,14 @@
 import React from 'react'
-import especies from 'Pages/datos.json';
 import { BiSearchAlt } from "react-icons/bi"
 import MUIDataTable from "mui-datatables";
 import AspectRatioIcon from '@mui/icons-material/AspectRatio';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom'
+import { useEspecies } from 'Context/EspeciesContext';
 
 const BuscarEspecie = () => {
+
+  const {especies} = useEspecies()
 
   const columns = [
     {
@@ -42,7 +44,7 @@ const BuscarEspecie = () => {
         sort: false,
         customBodyRenderLite: (rowIndex) => {
           return(
-            <Link to={especies[rowIndex].id.toString()}>
+            <Link to={especies[rowIndex]._id}>
               <AspectRatioIcon style={{cursor: 'pointer'}}/>
             </Link>
           )

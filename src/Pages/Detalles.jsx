@@ -1,13 +1,15 @@
 import React from 'react'
 import {useParams} from "react-router-dom";
-import especies from 'Pages/datos.json';
 import Requerimientos from 'Components/Requerimientos';
 import Descripcion from 'Components/Descripcion';
+import { useEspecies } from 'Context/EspeciesContext';
 
 const Detalles = () => {
 
   const {id} = useParams();
-  const especie = especies.filter((especie) => {return especie.id === parseInt(id)})
+  const {especies} = useEspecies()
+  
+  const especie = especies.filter((especie) => {return especie._id === id})
   
   return (
     <div>
