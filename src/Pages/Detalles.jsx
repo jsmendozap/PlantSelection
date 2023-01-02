@@ -1,6 +1,6 @@
 import React from 'react'
 import {useParams} from "react-router-dom";
-import especies from 'Pages/especies';
+import especies from 'Pages/datos.json';
 import Requerimientos from 'Components/Requerimientos';
 import Descripcion from 'Components/Descripcion';
 

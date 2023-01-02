@@ -1,5 +1,5 @@
 import React from 'react'
-import especies from 'Pages/especies';
+import especies from 'Pages/datos.json';
 import { BiSearchAlt } from "react-icons/bi"
 import MUIDataTable from "mui-datatables";
 import AspectRatioIcon from '@mui/icons-material/AspectRatio';
