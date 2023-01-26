@@ -18,11 +18,13 @@ const Resumen = () => {
     
       const card = {
         borderRadius: "10px",
-        width: "30%",
         display: 'flex',
         flexDirection: 'column',
-        position: 'fixed',
-        right: '14vh',
+        position: 'sticky',
+        top: '10vh',
+        bottom: '5vh',
+        height: '420px',
+        marginLeft: '20vh',
         boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
         transition: '0.3s'
       }

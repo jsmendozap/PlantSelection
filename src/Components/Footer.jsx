@@ -15,11 +15,10 @@ const Footer = () => {
   }
 
   return (
-    <div style={estilos}>
+    <footer style={estilos}>
       <p style={{marginBottom: 0, fontWeight: 300}}>Selección Forestal</p>
       <p  style={{marginBottom: 0, fontWeight: 300}}>Universidad Nacional de Colombia</p>
-      <p  style={{marginBottom: 0, fontWeight: 300}}>Departamento de Ciencias Forestales</p>
-    </div>
+    </footer>
   )
 }
 

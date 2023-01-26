@@ -6,7 +6,7 @@ const Publico = ({ children }) => {
   return (
     <div>
         <Header/>
-          <main style={{minHeight: '56.2vh'}}>{children}</main> 
+          <main style={{minHeight: 'calc(100vh - 273px)'}}>{children}</main> 
         <Footer/>
     </div>
   )

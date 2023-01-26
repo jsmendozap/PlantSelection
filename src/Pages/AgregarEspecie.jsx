@@ -22,11 +22,15 @@ import { crearEspecie } from 'utils/api'
 const AgregarEspecie = () => {
 
   const form = useRef()
-
+  
   const calificar = (form, valores) => {
     const evaluacion = Object.values(form).map((el) => el !== "");
     const resultado = Object.values(valores).map((el, index) => (evaluacion[index] ? el : 0));
     return resultado.reduce((partialSum, valor) => partialSum + valor, 0);
+  }
+
+  const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
 
   const agregar = (e) => {
@@ -35,6 +39,9 @@ const AgregarEspecie = () => {
     const formProps = sortKeys(Object.fromEntries(formData))
     crearEspecie({...formProps, 'calificacion': calificar(formProps, calificacion)})
     form.current.reset()
+    sleep(1000).then(r => {
+      window.location.reload()
+    })
   }
 
   return (
