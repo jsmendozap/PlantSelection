@@ -18,6 +18,7 @@ import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import calificacion from 'Components/calificacion.json'
 import sortKeys from 'sort-keys'
 import { crearEspecie } from 'utils/api'
+import { Accordion } from 'react-bootstrap'
 
 const AgregarEspecie = () => {
 
@@ -45,31 +46,31 @@ const AgregarEspecie = () => {
   }
 
   return (
-    <div style={{width: '99%'}}>
+    <>
       <div style={{display: 'flex', justifyContent: 'center', marginBottom: '3vh'}}>
         <HiDocumentAdd style={{width: '5vh', height: '45px', color: 'orange'}}/>
         <h2>Agregar especie</h2>
       </div>
-      <form ref={form} onSubmit={agregar} style={{textAlign: 'center'}}>
-        <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-          <Acordion titulo='Información General' contenido={general}/>
-          <Acordion titulo='Oferta de germoplasma' contenido={germoplasma}/>
-          <Acordion titulo='Plantaciones forestales' contenido={plantaciones}/>
-          <Acordion titulo='Requerimientos ecológicos generales' contenido={generales}/>
-          <Acordion titulo='Requerimientos ecológicos óptimos' contenido={optima}/>
-          <Acordion titulo='Propagación' contenido={propagacion}/>
-          <Acordion titulo='Silvicultura' contenido={silvicultra}/>
-          <Acordion titulo='Crecimiento - Rendimientos' contenido={crecimiento}/>
-          <Acordion titulo='Madera' contenido={madera}/>
-          <Acordion titulo='Plagas y enfermedades' contenido={plagas}/>
-          <Acordion titulo='Bibliografia' contenido={bibliografia}/>
-        </div>
+      <form ref={form} onSubmit={agregar} style={{textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <Accordion style={{marginBottom: '5vh', width: '70%'}}>
+          <Acordion titulo='Información General' contenido={general} valor="0"/>
+          <Acordion titulo='Oferta de germoplasma' contenido={germoplasma} valor="1"/>
+          <Acordion titulo='Plantaciones forestales' contenido={plantaciones} valor="2"/>
+          <Acordion titulo='Requerimientos ecológicos generales' contenido={generales} valor="3"/>
+          <Acordion titulo='Requerimientos ecológicos óptimos' contenido={optima} valor="4"/>
+          <Acordion titulo='Propagación' contenido={propagacion} valor="5"/>
+          <Acordion titulo='Silvicultura' contenido={silvicultra} valor="6"/>
+          <Acordion titulo='Crecimiento - Rendimientos' contenido={crecimiento} valor="7"/>
+          <Acordion titulo='Madera' contenido={madera} valor="8"/>
+          <Acordion titulo='Plagas y enfermedades' contenido={plagas} valor="9"/>
+          <Acordion titulo='Bibliografia' contenido={bibliografia} valor="10"/>
+        </Accordion>
         <Button type='submit' variant='contained' startIcon={<SaveOutlinedIcon />}>
           Guardar
         </Button>
       </form>
       <ToastContainer />
-    </div>
+    </>
   )
 }
 

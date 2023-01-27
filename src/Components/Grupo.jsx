@@ -4,7 +4,7 @@ import Input from 'Components/Input'
 const Grupo = ({ grupo }) => {
 
   return (
-    <div style={{display: 'grid', gridTemplateColumns: '70vh 70vh', justifyContent: 'space-evenly'}} >
+    <div style={{display: 'grid', gridTemplateColumns: '50vh 50vh', justifyContent: 'space-evenly'}} >
         {
             grupo.map((el) => {
                 return <Input key={el[0]} etiqueta={el[2]} nombre={el[1]} tipo={el[3]}/>
