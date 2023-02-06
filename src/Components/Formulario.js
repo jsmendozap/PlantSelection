@@ -24,17 +24,12 @@ const generales = [
     0.25,
     "Requerimientos ecológicos generales",
   ],
-  [
-    4.3,
-    "Distribución altitudinal",
-    0.25,
-    "Requerimientos ecológicos generales",
-  ],
-  [4.4, "Temperatura", 0.25, "Requerimientos ecológicos generales"],
-  [4.5, "pH del suelo", 0.25, "Requerimientos ecológicos generales"],
-  [4.6, "Profundidad del suelo", 0.25, "Requerimientos ecológicos generales"],
-  [4.7, "Fertilidad del suelo", 0.25, "Requerimientos ecológicos generales"],
-  [4.8, "Pendiente", 0.25, "Requerimientos ecológicos generales"],
+  [4.3, "Distribución altitudinal", 0.5, "Requerimientos ecológicos generales"],
+  [4.4, "Temperatura", 0.5, "Requerimientos ecológicos generales"],
+  [4.5, "pH del suelo", 0.5, "Requerimientos ecológicos generales"],
+  [4.6, "Profundidad del suelo", 0.5, "Requerimientos ecológicos generales"],
+  [4.7, "Fertilidad del suelo", 0.5, "Requerimientos ecológicos generales"],
+  [4.8, "Pendiente", 0.5, "Requerimientos ecológicos generales"],
 ];
 
 const especificos = [
